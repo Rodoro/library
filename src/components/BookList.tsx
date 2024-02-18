@@ -18,9 +18,9 @@ const BookList: React.FC<BookListProps> = ({ title, books }) => {
   }
 
   return (
-    <div>
-      <h1 className='text-center'>
-        {title}
+    <div className="flex flex-col items-center">
+      <h1 className='text-center text-3xl'>
+        <b>{title}</b>
       </h1>
       {books.map((book: Book) =>
         <BookItem key={book.id} book={book} />

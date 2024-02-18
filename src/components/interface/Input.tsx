@@ -8,7 +8,7 @@ const Input: React.FC<InputProps> = ({ type, ...props }) => {
     return (
         <input
             type={type}
-            className=''
+            className='rounded m-6 border border-gray-600'
             {...props}
         />
     )
