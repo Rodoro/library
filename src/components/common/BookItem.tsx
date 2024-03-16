@@ -10,7 +10,7 @@ const BookItem: React.FC<BookItemProps> = ({ book }) => {
     const router = useRouter();
 
     const handleClick = () => {
-        router.push('/map/' + book.shelvingNumber);
+        router.push('/book/' + book.shelvingNumber);
     };
 
     return (

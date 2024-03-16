@@ -1,8 +1,10 @@
-import React from 'react'
-import Map from '../../../../public/map.svg'
-import Image from 'next/image'
+import React, { HTMLAttributes } from 'react'
 
-const page = ({ params }: { params: { id: number } }) => {
+export interface MapProps extends HTMLAttributes<HTMLDivElement> {
+    params: { id: number }
+}
+
+const Map: React.FC<MapProps> = ({params}) => {
     return (
         <div className="flex flex-col items-center">
             <svg className="svgIcon-use" x="0px" y="0px" width="800" height="800">
@@ -25,7 +27,7 @@ const page = ({ params }: { params: { id: number } }) => {
                 <circle fill='#DE2828' stroke="#000000" stroke-miterlimit="10" cx="546.5" cy="436.5" r="22" />
                 <text transform="matrix(1 0 0 1 237.6421 687.7061)" fill={params?.id == 1 ? "red" : "black"} font-size="36">1</text>
                 <text transform="matrix(1 0 0 1 425.6421 687.7061)" fill={params?.id == 2 ? "red" : "black"} font-size="36">2</text>
-                <text transform="matrix(1 0 0 1 459.6421 687.7061)"fill={params?.id == 3 ? "red" : "black"} font-size="36">3</text>
+                <text transform="matrix(1 0 0 1 459.6421 687.7061)" fill={params?.id == 3 ? "red" : "black"} font-size="36">3</text>
                 <text transform="matrix(1 0 0 1 237.2197 123.3711)" fill={params?.id == 10 ? "red" : "black"} font-size="21">10</text>
                 <text transform="matrix(1 0 0 1 325.2197 123.3711)" fill={params?.id == 11 ? "red" : "black"} font-size="21">11</text>
                 <text transform="matrix(1 0 0 1 356.2197 123.3711)" fill={params?.id == 12 ? "red" : "black"} font-size="21">12</text>
@@ -43,4 +45,4 @@ const page = ({ params }: { params: { id: number } }) => {
     )
 }
 
-export default page
+export default Map
