@@ -30,6 +30,7 @@ const Main = () => {
     return (
         <main className="flex min-h-screen flex-col items-center">
             <BookFilter onChange={(e:any) => setSearchTerm(e.target.value)}/>
+            <div className='m-4' />
             <BookList title="Список книг" books={filteredBooks} />
         </main>
     )
