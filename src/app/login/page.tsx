@@ -1,11 +1,10 @@
+import LoginScreen from '@/containers/auth/LoginScreen'
 import React from 'react'
 
 const Login = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+    return (
+        <LoginScreen />
+    )
 }
 
 export default Login
