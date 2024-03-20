@@ -6,7 +6,7 @@ const Card = React.forwardRef<
 >(({ ...props }, ref) => (
     <div
         ref={ref}
-        className='flex min-w-screen flex-col items-center justify-between rounded-lg border shadow-sm'
+        className='mt-24 flex min-w-screen flex-col items-center justify-between rounded-lg border shadow-sm'
         {...props}
     />
 ))
@@ -30,7 +30,7 @@ const CardTitle = React.forwardRef<
 >(({ ...props }, ref) => (
     <div
         ref={ref}
-        className='text-lg font-semibold leading-none tracking-tight'
+        className='text-lg text-center font-semibold leading-none tracking-tight'
         {...props}
     />
 ))
@@ -66,7 +66,7 @@ const CardFooter = React.forwardRef<
 >(({ ...props }, ref) => (
     <div
         ref={ref}
-        className='flex items-center p-6 pt-0 px-2 sm:px-4'
+        className='p-6 pt-0 px-2 sm:px-4'
         {...props}
     />
 ))
