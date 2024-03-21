@@ -6,4 +6,5 @@ export interface Book {
     shelfNumber: number|string;
     shelvingNumber: number|string;
     available: boolean;
+    isActive?: boolean;
 }

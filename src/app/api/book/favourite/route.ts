@@ -1,8 +1,6 @@
-import connect from "@/utils/db"
-import Book from "@/models/Book"
 import User from "@/models/User";
+import connect from "@/utils/db";
 import { getToken } from "next-auth/jwt"
-
 
 export const POST = async (req: any) => {
     const session = await getToken({ req });
@@ -13,14 +11,20 @@ export const POST = async (req: any) => {
         }
 
         await connect();
-        const { category } = await req.json();
+        const { number } = await req.json();
+        let res;
         const user = await User.findOne({ email: session.email });
-        const books = await Book.find({
-            id: { $in: user.tabs[category] }
-        });
-
-        return Response.json({ books });
-
+        console.log(user.tabs.favourites)
+        const index = user.tabs.favourites.indexOf(number);
+        if (index === -1) {
+            user.tabs.favourites.push(number);
+            res = true;
+        } else {
+            user.tabs.favourites.splice(index, 1);
+            res = false;
+        }
+        await user.save();
+        return Response.json({ res });
     } catch (error) {
         console.error(error);
         return new Response("Ошибка сервера", { status: 500 })

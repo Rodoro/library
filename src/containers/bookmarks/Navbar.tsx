@@ -14,12 +14,12 @@ const Navbar: React.FC<NavbarProps> = ({ handleCategoryChange }) => {
 
     return (
         <nav>
-            <ul className='flex justify-center items-center m-10'>
+            <ul className='flex justify-center items-center mb-10'>
                 <div className='flex gap-6'>
-                    <li onClick={() => handleCategoryClick('favourites', 'Избраные')}>Избраные</li>
-                    <li onClick={() => handleCategoryClick('history', 'История')}>История</li>
-                    <li onClick={() => handleCategoryClick('plans', 'В планах')}>В планах</li>
-                    <li onClick={() => handleCategoryClick('read', 'Читаю')}>Читаю</li>
+                    <li className='cursor-pointer' onClick={() => handleCategoryClick('favourites', 'Избраные')}>Избраные</li>
+                    <li className='cursor-pointer' onClick={() => handleCategoryClick('history', 'История')}>История</li>
+                    <li className='cursor-pointer' onClick={() => handleCategoryClick('plans', 'В планах')}>В планах</li>
+                    <li className='cursor-pointer' onClick={() => handleCategoryClick('read', 'Читаю')}>Читаю</li>
                 </div>
             </ul>
         </nav>
