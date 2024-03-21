@@ -59,7 +59,7 @@ const LoginForm = () => {
                 placeholder='Пароль'
                 required
             />
-            <FormButton type="submit">Зарегистрироватся</FormButton>
+            <FormButton type="submit">Войти</FormButton>
             <Error text={error} />
         </form>
     )

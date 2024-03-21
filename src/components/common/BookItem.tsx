@@ -23,6 +23,7 @@ const BookItem: React.FC<BookItemProps> = ({ book }) => {
                 <div>Жанр: {book.genre}</div>
             </div>
             <div className="col-2">Находится на {book.shelfNumber} полке, {book.shelvingNumber} стелажа</div>
+            <div></div>
         </div >
     )
 }
