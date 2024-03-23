@@ -19,7 +19,7 @@ const Main = () => {
             .catch((error) => {
                 console.error("Ошибка получения списка книг")
             })
-    })
+    }, [])
 
     const filteredBooks = books.filter((book: Book) =>
         book.name.toLowerCase().includes(searchTerm.toLowerCase()) ||

@@ -15,9 +15,16 @@ export const POST = async (req: any) => {
         await connect();
         const { category } = await req.json();
         const user = await User.findOne({ email: session.email });
-        const books = await Book.find({
+        let books = await Book.find({
             id: { $in: user.tabs[category] }
         });
+
+        books = books.map(book => {
+            if (user.tabs.favourites.includes(book.id)) {
+                return {...book._doc, isActive: true};
+            }
+            return book;
+        })
 
         return Response.json({ books });
 

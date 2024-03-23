@@ -14,7 +14,6 @@ export const POST = async (req: any) => {
         const { number } = await req.json();
         let res;
         const user = await User.findOne({ email: session.email });
-        console.log(user.tabs.favourites)
         const index = user.tabs.favourites.indexOf(number);
         if (index === -1) {
             user.tabs.favourites.push(number);
