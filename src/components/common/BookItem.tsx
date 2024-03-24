@@ -12,7 +12,7 @@ const BookItem: React.FC<BookItemProps> = ({ book }) => {
     const router = useRouter();
 
     const handleClick = () => {
-        router.push('/book/' + book.shelvingNumber);
+        router.push('/book/' + book.id);
     };
 
     const favouriteClick = async () => {

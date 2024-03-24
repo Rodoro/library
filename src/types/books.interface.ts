@@ -3,8 +3,8 @@ export interface Book {
     name: string;
     author: string;
     genre: string;
-    shelfNumber: number|string;
-    shelvingNumber: number|string;
+    shelfNumber: number;
+    shelvingNumber: number;
     available: boolean;
     isActive?: boolean;
 }
