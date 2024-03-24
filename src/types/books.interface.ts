@@ -7,4 +7,5 @@ export interface Book {
     shelvingNumber: number;
     available: boolean;
     isActive?: boolean;
+    tab?: string;
 }

@@ -17,8 +17,15 @@ export const POST = async (req: any) => {
             return Response.json({ item })
         }
         const user = await User.findOne({ email: session.email });
-        if(user.tabs.favourites.includes(id)){
+        if (user.tabs.favourites.includes(id)) {
             item._doc.isActive = true;
+        }
+        if (user.tabs.plans.includes(id)) {
+            item._doc.tab = "plans"
+        } else if (user.tabs.read.includes(id)) {
+            item._doc.tab = "read"
+        } else if (user.tabs.history.includes(id)) {
+            item._doc.tab = "history"
         }
         return Response.json({ item })
     } catch (error) {

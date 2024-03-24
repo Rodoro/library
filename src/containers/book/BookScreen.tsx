@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Map, { MapProps } from './Map'
 import { Book } from '@/types/books.interface';
 import Heart from '@/components/common/Heart';
+import TabsDropdownMenu from '@/components/TabsDropdownMenu';
 
 export interface BookScreenProps extends MapProps { }
 
@@ -31,7 +32,7 @@ const BookScreen: React.FC<BookScreenProps> = ({ params }: any) => {
                 console.error("Ошибка получения книги")
                 setIsLoading(false);
             })
-    }, [ params ])
+    }, [params])
 
     const favouriteClick = async () => {
         if (!book) return;
@@ -76,6 +77,7 @@ const BookScreen: React.FC<BookScreenProps> = ({ params }: any) => {
                             <div>Автор: {book.author}</div>
                             <div>Жанр: {book.genre}</div>
                             <div>Находится на {book.shelfNumber} полке, {book.shelvingNumber} стелажа</div>
+                            <TabsDropdownMenu idBook={book.id} startValue={book.tab}/>
                         </div>
                     </div>
                     <div className="flex justify-center items-center">
