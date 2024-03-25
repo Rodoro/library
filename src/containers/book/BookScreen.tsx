@@ -1,11 +1,13 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, { HTMLAttributes, useEffect, useState } from 'react'
 import Map, { MapProps } from './Map'
 import { Book } from '@/types/books.interface';
 import Heart from '@/components/common/Heart';
 import TabsDropdownMenu from '@/components/TabsDropdownMenu';
 
-export interface BookScreenProps extends MapProps { }
+export interface BookScreenProps extends HTMLAttributes<HTMLDivElement> { 
+    params: {id: number}
+}
 
 const BookScreen: React.FC<BookScreenProps> = ({ params }: any) => {
     const [book, setBook] = useState<Book>();
