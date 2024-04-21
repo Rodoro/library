@@ -1,20 +1,20 @@
 import mongoose from "mongoose";
 
 const { Schema } = mongoose;
-
+// Создаем схему данных БД для хронения данных о книге
 const bookSchema = new Schema(
     {
-        id: { type: Number },
-        name: { type: String },
-        author: { type: String },
-        genre: { type: String },
-        shelfNumber: { type: Number },
-        shelvingNumber: { type: Number },
-        available: { type: Boolean }
+        id: { type: Number },   // Индефикатор книги
+        name: { type: String }, // Наименование книги
+        author: { type: String },   // Автор книги
+        genre: { type: String },    // Жанр книги
+        shelfNumber: { type: Number },  // Полка книги
+        shelvingNumber: { type: Number },   // Стелаж книги
+        available: { type: Boolean }    // Доступность книги
     },
     { timestamps: true }
 );
-
+// Реализация пресейв хука для автоматического добавления id по возрастанию
 bookSchema.pre('save', function (next) {
     const book = this;
     if (book.isNew) {
@@ -29,6 +29,7 @@ bookSchema.pre('save', function (next) {
         next();
     }
 })
-
+// Экспорт схемы
 const BookModal = mongoose.models.Book || mongoose.model("Book", bookSchema)
 export default BookModal;
+

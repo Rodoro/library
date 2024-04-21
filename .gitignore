@@ -8,7 +8,7 @@
 
 # testing
 /coverage
-
+/.VSCodeCounter
 # next.js
 /.next/
 /out/
