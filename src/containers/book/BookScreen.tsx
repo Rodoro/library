@@ -82,7 +82,7 @@ const BookScreen: React.FC<BookScreenProps> = ({ params }: any) => {
                             <TabsDropdownMenu idBook={book.id} startValue={book.tab}/>
                         </div>
                     </div>
-                    <div className="flex justify-center items-center">
+                    <div className="flex justify-center items-center m-10">
                         <Map idBook={book.shelvingNumber} />
                     </div>
                 </div >
