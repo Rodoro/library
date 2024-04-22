@@ -34,4 +34,14 @@ export const GET = async (req: any) => {
     }
 }
 
+export const POST = async (req: any) => {
+    try {
+        await connect();
+        const items = await Book.find({})
+        return Response.json({ items })
 
+    } catch (error) {
+        console.error(error);
+        return new Response("Ошибка сервера", { status: 500 })
+    }
+}
